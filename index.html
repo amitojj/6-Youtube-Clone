@@ -6,7 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="Amit Arora" />
     <link rel="stylesheet" href="./input/style.css" />
-    <link rel="stylesheet" href="./output/style.css" />
+    <!-- <link rel="stylesheet" href="./output/style.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,6 +33,16 @@
       }
 
       ::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+        background-color: #888888;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+        background-color: #111111;
+      }
+      .sidebar:hover::-webkit-scrollbar-thumb {
         border-radius: 8px;
         -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
         background-color: #888888;
@@ -227,7 +237,7 @@
     <div class="flex">
       <!-- ─── Sidebar ─────────────────────────────── ✣ ─ -->
       <div
-        class="fixed h-full w-20 flex-col gap-4 py-1.5 pb-20 hover:overflow-y-auto sm:flex lg:w-52 lg:gap-0 lg:px-4"
+        class="fixed h-full w-20 flex-col gap-4 py-1.5 pb-20 overflow-y-auto sm:flex lg:w-52 lg:gap-0 lg:px-4 sidebar"
       >
         <!-- ─── Sidebar-item-home ────────────────── ✣ ─ -->
         <div class="side_navigation_item bg-bgh1 hover:bg-bgb1">
@@ -309,7 +319,7 @@
         </div>
         <!-- ─── Seperator ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  ✣ ─ -->
         <div
-          class="w-fill my-2 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
+          class="w-full my-3 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
         ></div>
         <!-- ─── You ─────────────────────────── ✣ ─ -->
         <div class="side_navigation_item lg:items-baseline lg:gap-3">
@@ -455,7 +465,7 @@
         </div>
         <!-- ─── Seperator ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✣ ─ -->
         <div
-          class="w-fill my-2 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
+          class="w-full my-3 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
         ></div>
         <!-- ─── Subscriptions ───────────────── ✣ ─ -->
         <div class="hidden side_navigation_item lg:flex">
@@ -591,7 +601,7 @@
         </div>
         <!-- ─── Seperator ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✣ ─ -->
         <div
-          class="w-fill my-2 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
+          class="w-full my-3 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
         ></div>
         <!-- ─── Explore ───────────────── ✣ ─ -->
         <div class="hidden side_navigation_item lg:flex">
@@ -820,7 +830,7 @@
         </div>
         <!-- ─── Seperator ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✣ ─ -->
         <div
-          class="w-fill my-2 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
+          class="w-full my-3 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
         ></div>
         <!-- ─── More from YouTube ───────────────── ✣ ─ -->
         <div class="hidden side_navigation_item lg:flex">
@@ -920,7 +930,7 @@
         </div>
         <!-- ─── Seperator ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✣ ─ -->
         <div
-          class="w-fill my-2 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
+          class="w-full my-3 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
         ></div>
         <!-- ─── Settings ────────────────── ✣ ─ -->
         <div class="hidden side_navigation_item lg:flex">
@@ -1004,7 +1014,7 @@
         </div>
         <!-- ─── Seperator ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✣ ─ -->
         <div
-          class="w-fill my-2 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
+          class="w-full my-3 hidden h-[1px] flex-shrink-0 border-b border-bgb1 lg:block"
         ></div>
         <div class="text-xs text-tc2">
           <a href="#" class="">About</a>
