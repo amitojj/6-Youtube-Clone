@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="Amit Arora" />
-    <!-- <link rel="stylesheet" href="./output/style.css" /> -->
+    <link rel="stylesheet" href="./output/style.css" />
     <link rel="stylesheet" href="./input/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon.ico"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +27,7 @@
     <style>
       :root {
         --mainw: calc(100vw - 17rem);
+        --mainws: calc(100vw - 8rem);
       }
       ::-webkit-scrollbar-track {
         border-radius: 10px;
@@ -49,10 +55,10 @@
   </head>
 
   <body
-    class="box-border w-screen h-screen max-w-full bg-bgm font-rob text-tc1"
+    class="box-border w-screen max-w-full overflow-y-scroll bg-bgm font-rob text-tc1"
   >
     <!-- ─── Navbar ──────────────────────────────────────────────── ✣ ─ -->
-    <nav class="sticky top-0 flex justify-between mx-4 h-14">
+    <nav class="sticky top-0 z-50 flex justify-between mx-4 bg-bgm h-14">
       <!-- ─── 3-bars +logo ──────────────────────────────── ✣ ─ -->
       <div class="flex">
         <!-- ─── 3bars ───────────────────────── ✣ ─ -->
@@ -216,10 +222,10 @@
     <div class="flex py-4">
       <!-- ─── Sidebar ─────────────────────────────── ✣ ─ -->
       <div
-        class="fixed h-full w-20 flex-col gap-4 pb-20 overflow-y-auto sm:flex lg:w-52 lg:gap-0 lg:px-4 sidebar"
+        class="fixed flex-col hidden w-16 h-full gap-0 pb-20 overflow-y-auto md:flex lg:w-52 lg:px-4 sidebar"
       >
         <!-- ─── Sidebar-item-home ────────────────── ✣ ─ -->
-        <div class="side_navigation_item bg-bgh1 hover:bg-bgb1">
+        <div class="side_navigation_item lg:bg-bgh1 lg:hover:bg-bgb1">
           <!-- ─── Icon ────────────────── ✣ ─ -->
           <div class="fill-current">
             <svg
@@ -1012,12 +1018,14 @@
         </div>
       </div>
       <!-- ─── Dummy Div ───────────────────────────── ✣ ─ -->
-      <div class="w-20 lg:w-52 flex-shrink-0"></div>
+      <div class="hidden md:block flex-shrink-0 w-16 lg:w-52"></div>
       <!-- ─── Main ────────────────────────────────── ✣ ─ -->
-      <div class="flex flex-col px-8">
+      <div
+        class="flex flex-1 flex-col px-4 xl:px-6 w-[--mainws] lg:w-[--mainw]"
+      >
         <!-- ─── Tagsbar ─────────────────────── ✣ ─ -->
         <div
-          class="flex items-center gap-2 w-[--mainw] overflow-hidden relative"
+          class="relative flex items-center w-full gap-2 overflow-hidden px-1"
         >
           <!-- ─── Tags ────────────────── ✣ ─ -->
           <div class="flex flex-shrink-0 gap-3 text-sm text-tc1">
@@ -1061,9 +1069,10 @@
           </div>
         </div>
         <!-- ─── Main ────────────────────────────────────────────────────────── ✣ ─ -->
-        <div class="grid grid-cols-gtc gap-5 p-5">
-          <!-- ─── Video ───────────────── ✣ ─ -->
-          <div class="group flex flex-col p-1 rounded-xl">
+
+        <div class="grid gap-3 py-5 grid-cols-gtc xl:grid-cols-gtcx">
+          <!-- ─── Video 1───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
             <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
             <img
               src="https://i.ytimg.com/vi/4oqjcKenCH8/hq720.jpg"
@@ -1071,7 +1080,7 @@
               class="max-w-full aspect-video rounded-xl group-hover:hidden"
             />
             <iframe
-              class="w-full aspect-video hidden group-hover:block"
+              class="hidden w-full aspect-video group-hover:block"
               src="https://www.youtube.com/embed/4oqjcKenCH8?si=CFIbM5aZBKHCcU4g&amp;controls=0"
               title="YouTube video player"
               frameborder="0"
@@ -1081,7 +1090,7 @@
             <!-- ─── Details ─────────────── ✣ ─ -->
             <div class="flex py-5">
               <!-- ─── Dp ──────────── ✣ ─ -->
-              <div class="w-14 rounded-full pr-5">
+              <div class="pr-5 rounded-full w-14">
                 <img
                   src="https://yt3.ggpht.com/ytc/AIf8zZRxxv-lMXnpfUTvYu-h8B4PNRq2rET1mX29v7uMIg=s88-c-k-c0x00ffffff-no-rj"
                   alt=""
@@ -1090,22 +1099,22 @@
               </div>
               <!-- ─── Title and channel ─────────────── ✣ ─ -->
               <div class="flex flex-col flex-1 pr-5">
-                <div class="text-tc1 font-semibold">
+                <div class="font-semibold text-tc1">
                   CS50x 2023 - Lecture 2 - Arrays
                 </div>
-                <div class="text-tc2 text-sm">
-                  CS50 <span class="fa fa-check-circle pl-2"></span>
+                <div class="text-sm text-tc2">
+                  CS50 <span class="pl-2 fa fa-check-circle"></span>
                 </div>
                 <div class="flex items-center">
-                  <div class="text-tc2 text-sm">900K views</div>
-                  <div class="m-2 w-1 h-1 bg-tc2 rounded-full"></div>
-                  <div class="text-tc2 text-sm">9 months ago</div>
+                  <div class="text-sm text-tc2">900K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">9 months ago</div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- ─── Video ───────────────── ✣ ─ -->
-          <div class="group flex flex-col p-1 rounded-xl">
+          <!-- ─── Video 2───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
             <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
             <img
               src="https://i.ytimg.com/vi/yPcWzSlsteA/hq720.jpg"
@@ -1113,7 +1122,7 @@
               class="max-w-full aspect-video rounded-xl group-hover:hidden"
             />
             <iframe
-              class="w-full aspect-video hidden group-hover:block"
+              class="hidden w-full aspect-video group-hover:block"
               src="https://www.youtube.com/embed/yPcWzSlsteA?si=CFIbM5aZBKHCcU4g&amp;controls=0"
               title="YouTube video player"
               frameborder="0"
@@ -1123,7 +1132,7 @@
             <!-- ─── Details ─────────────── ✣ ─ -->
             <div class="flex py-5">
               <!-- ─── Dp ──────────── ✣ ─ -->
-              <div class="w-14 rounded-full pr-5">
+              <div class="pr-5 rounded-full w-14">
                 <img
                   src="https://yt3.ggpht.com/ytc/AIf8zZTISnAkD2kHuVZMRVTr5QNCww-gagEU9xDdc_w6=s88-c-k-c0x00ffffff-no-rj"
                   alt=""
@@ -1132,22 +1141,666 @@
               </div>
               <!-- ─── Title and channel ─────────────── ✣ ─ -->
               <div class="flex flex-col flex-1 pr-5">
-                <div class="text-tc1 font-semibold">
+                <div class="font-semibold text-tc1">
                   Go vs Rust vs Bun vs Node | Prime Reacts
                 </div>
-                <div class="text-tc2 text-sm">
-                  ThePrimeTime <span class="fa fa-check-circle pl-2"></span>
+                <div class="text-sm text-tc2">
+                  ThePrimeTime <span class="pl-2 fa fa-check-circle"></span>
                 </div>
                 <div class="flex items-center">
-                  <div class="text-tc2 text-sm">145K views</div>
-                  <div class="m-2 w-1 h-1 bg-tc2 rounded-full"></div>
-                  <div class="text-tc2 text-sm">6 months ago</div>
+                  <div class="text-sm text-tc2">145K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">6 months ago</div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- ─── Video ───────────────── ✣ ─ -->
-          <div class="group flex flex-col p-1 rounded-xl">
+          <!-- ─── Video 3───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/hGgQ_qxuKO0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/hGgQ_qxuKO0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/1FEdfq3XpKE9UrkT4eOc5wLF2Bz-42sskTi0RkK4nPh4WqCbVmmrDZ5SVEV3WyvPdkfR8sw2=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Why to learn Javascript | Cutting Chai
+                </div>
+                <div class="text-sm text-tc2">
+                  Chai aur Code <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">17K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">2 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 4───────────────── ✣ ─ -->
+
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/2fHnUhA0OTo/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/2fHnUhA0OTo?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZTURjsw1ESUhwQi1pbb634e-gFhCbO9YBB3fHHAnA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  MBA CHAIWALA FILED A CASE ON ME!
+                </div>
+                <div class="text-sm text-tc2">
+                  Thugesh
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">2.1M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">9 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 5───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/SHO_vIS9rfY/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/SHO_vIS9rfY?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZS-vKcN9P4VsCaQUeirOFoDWhPVhCLt0gHBub8Hxw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  When Does Pure Water Get Thick?
+                </div>
+                <div class="text-sm text-tc2">
+                  The Action Lab
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">284K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">4 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 6───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/mSBnJvHtgD0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/mSBnJvHtgD0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZSBXGepGG51kNMKobtKULfhGhJBp7LrJYYTBfkA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  When Does Pure Water Get Thick?
+                </div>
+                <div class="text-sm text-tc2">
+                  The Action Lab
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">284K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">4 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 7───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/WXYmMiwr9JU/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/WXYmMiwr9JU?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/1FEdfq3XpKE9UrkT4eOc5wLF2Bz-42sskTi0RkK4nPh4WqCbVmmrDZ5SVEV3WyvPdkfR8sw2=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  This is future of development
+                </div>
+                <div class="text-sm text-tc2">
+                  Chai aur Code <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">38K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">5 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 8───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/lpLJksTC2J0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/lpLJksTC2J0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZTt1P1YL3dtduwnGPxN9iDnfAPqk9jIJqGjLPza=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Parliament Breach: Who are the six accused?
+                </div>
+                <div class="text-sm text-tc2">
+                  TNIE Videos
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">3787 views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">51 minutes ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 9───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/yLG8y3BWq7k/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/yLG8y3BWq7k?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/KqDG8ab-rEXzelzh75Xw8KDWoCpY683OhQmLWxn0WGtbUo-3bOvDELvafX4ajq4DOf2HFpL_-A=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  GTA 6 is Finally Here : All You Need To Know!
+                </div>
+                <div class="text-sm text-tc2">
+                  Venom's Tech
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">168K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">10 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 10───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/4c2gviBnyhg/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/4c2gviBnyhg?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/aCpDMXQLiFaLewhEg_Ij3gr-vfMkZvwVCtmTUupgOE3YUbIubr7j0vyjoCm839SCbO9MENxMhw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Generate Innings: Day 3 | Perth | Aus vs Pak
+                </div>
+                <div class="text-sm text-tc2">
+                  The Grade Cricketer
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">16K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 11───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/8aR77s9RLck/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/8aR77s9RLck?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/b6JwZU9KF2dIt06sct2fAmw1Ki9pJRDQHQ0lPR9LfSe9KjuV_xN1rsYWrTb_VDyvVKx3WixupUQ=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  What If Gravity is NOT Quantum?
+                </div>
+                <div class="text-sm text-tc2">
+                  PBS Space Time
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">1m views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 month ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 12───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/kBznA1cKgiY/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/kBznA1cKgiY?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/fQQ_gL8K48zFYTIT4F-agu_Snt4wQbpPfXbfwdOaRgu0DVRwmB_r6V60JXtW-6FfphauTmssWA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  This New Pixel Feature Works Like Magic!
+                </div>
+                <div class="text-sm text-tc2">
+                  Beebom
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">124k views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 13───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/PA9iymey_lM/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/PA9iymey_lM?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/lkH37D712tiyphnu0Id0D5MwwQ7IRuwgQLVD05iMXlDWO-kDHut3uI4MgIEAQ9StK0qOST7fiA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  The Worst Hot Takes in Tech
+                </div>
+                <div class="text-sm text-tc2">
+                  Marques Brownlee
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">1.1M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">15 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 14───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/0XETsoyx-i8/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/0XETsoyx-i8?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/z7ld-8fd6O1_TWOwzngpxqnkNfdyyQfm-Gk0PwOSzep3LFCCtzbUWKsNGPL6Spk4hWqHZUgk=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">ANIMAL MEME REVIEW</div>
+                <div class="text-sm text-tc2">
+                  Tanmay Bhat
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">3.3M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">15 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 15───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/mISvJhV8w-w/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/mISvJhV8w-w?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/enyLBm1Sy8mVRXJJLWHT2z64nqxJGt2g61A9xnxpUjO2YAUovHaY_JT3rnAg0j6Qij9iaHQlAg=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  I bought the CRAZIEST tech in Japan
+                </div>
+                <div class="text-sm text-tc2">
+                  Mrwhosetheboss
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">4.3M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">5 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 16───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/BPrJKQ2HH28/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/BPrJKQ2HH28?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/SMHmQVpzLs0uL7728eQfYp4auW_-Gy5eWjF1knpd11TSu68Y_0C1RFzP8G_HzUL6wXSjwPvZ=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Linus Tech Tips Bought My Computer
+                </div>
+                <div class="text-sm text-tc2">
+                  Asmongold TV
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">5.6M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">6 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 1───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/4oqjcKenCH8/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/4oqjcKenCH8?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZRxxv-lMXnpfUTvYu-h8B4PNRq2rET1mX29v7uMIg=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  CS50x 2023 - Lecture 2 - Arrays
+                </div>
+                <div class="text-sm text-tc2">
+                  CS50 <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">900K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">9 months ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 2───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
             <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
             <img
               src="https://i.ytimg.com/vi/yPcWzSlsteA/hq720.jpg"
@@ -1155,7 +1808,7 @@
               class="max-w-full aspect-video rounded-xl group-hover:hidden"
             />
             <iframe
-              class="w-full aspect-video hidden group-hover:block"
+              class="hidden w-full aspect-video group-hover:block"
               src="https://www.youtube.com/embed/yPcWzSlsteA?si=CFIbM5aZBKHCcU4g&amp;controls=0"
               title="YouTube video player"
               frameborder="0"
@@ -1165,7 +1818,7 @@
             <!-- ─── Details ─────────────── ✣ ─ -->
             <div class="flex py-5">
               <!-- ─── Dp ──────────── ✣ ─ -->
-              <div class="w-14 rounded-full pr-5">
+              <div class="pr-5 rounded-full w-14">
                 <img
                   src="https://yt3.ggpht.com/ytc/AIf8zZTISnAkD2kHuVZMRVTr5QNCww-gagEU9xDdc_w6=s88-c-k-c0x00ffffff-no-rj"
                   alt=""
@@ -1174,22 +1827,666 @@
               </div>
               <!-- ─── Title and channel ─────────────── ✣ ─ -->
               <div class="flex flex-col flex-1 pr-5">
-                <div class="text-tc1 font-semibold">
+                <div class="font-semibold text-tc1">
                   Go vs Rust vs Bun vs Node | Prime Reacts
                 </div>
-                <div class="text-tc2 text-sm">
-                  ThePrimeTime <span class="fa fa-check-circle pl-2"></span>
+                <div class="text-sm text-tc2">
+                  ThePrimeTime <span class="pl-2 fa fa-check-circle"></span>
                 </div>
                 <div class="flex items-center">
-                  <div class="text-tc2 text-sm">145K views</div>
-                  <div class="m-2 w-1 h-1 bg-tc2 rounded-full"></div>
-                  <div class="text-tc2 text-sm">6 months ago</div>
+                  <div class="text-sm text-tc2">145K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">6 months ago</div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- ─── Video ───────────────── ✣ ─ -->
-          <div class="group flex flex-col p-1 rounded-xl">
+          <!-- ─── Video 3───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/hGgQ_qxuKO0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/hGgQ_qxuKO0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/1FEdfq3XpKE9UrkT4eOc5wLF2Bz-42sskTi0RkK4nPh4WqCbVmmrDZ5SVEV3WyvPdkfR8sw2=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Why to learn Javascript | Cutting Chai
+                </div>
+                <div class="text-sm text-tc2">
+                  Chai aur Code <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">17K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">2 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 4───────────────── ✣ ─ -->
+
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/2fHnUhA0OTo/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/2fHnUhA0OTo?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZTURjsw1ESUhwQi1pbb634e-gFhCbO9YBB3fHHAnA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  MBA CHAIWALA FILED A CASE ON ME!
+                </div>
+                <div class="text-sm text-tc2">
+                  Thugesh
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">2.1M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">9 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 5───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/SHO_vIS9rfY/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/SHO_vIS9rfY?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZS-vKcN9P4VsCaQUeirOFoDWhPVhCLt0gHBub8Hxw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  When Does Pure Water Get Thick?
+                </div>
+                <div class="text-sm text-tc2">
+                  The Action Lab
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">284K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">4 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 6───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/mSBnJvHtgD0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/mSBnJvHtgD0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZSBXGepGG51kNMKobtKULfhGhJBp7LrJYYTBfkA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  When Does Pure Water Get Thick?
+                </div>
+                <div class="text-sm text-tc2">
+                  The Action Lab
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">284K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">4 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 7───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/WXYmMiwr9JU/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/WXYmMiwr9JU?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/1FEdfq3XpKE9UrkT4eOc5wLF2Bz-42sskTi0RkK4nPh4WqCbVmmrDZ5SVEV3WyvPdkfR8sw2=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  This is future of development
+                </div>
+                <div class="text-sm text-tc2">
+                  Chai aur Code <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">38K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">5 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 8───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/lpLJksTC2J0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/lpLJksTC2J0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZTt1P1YL3dtduwnGPxN9iDnfAPqk9jIJqGjLPza=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Parliament Breach: Who are the six accused?
+                </div>
+                <div class="text-sm text-tc2">
+                  TNIE Videos
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">3787 views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">51 minutes ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 9───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/yLG8y3BWq7k/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/yLG8y3BWq7k?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/KqDG8ab-rEXzelzh75Xw8KDWoCpY683OhQmLWxn0WGtbUo-3bOvDELvafX4ajq4DOf2HFpL_-A=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  GTA 6 is Finally Here : All You Need To Know!
+                </div>
+                <div class="text-sm text-tc2">
+                  Venom's Tech
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">168K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">10 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 10───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/4c2gviBnyhg/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/4c2gviBnyhg?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/aCpDMXQLiFaLewhEg_Ij3gr-vfMkZvwVCtmTUupgOE3YUbIubr7j0vyjoCm839SCbO9MENxMhw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Generate Innings: Day 3 | Perth | Aus vs Pak
+                </div>
+                <div class="text-sm text-tc2">
+                  The Grade Cricketer
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">16K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 11───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/8aR77s9RLck/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/8aR77s9RLck?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/b6JwZU9KF2dIt06sct2fAmw1Ki9pJRDQHQ0lPR9LfSe9KjuV_xN1rsYWrTb_VDyvVKx3WixupUQ=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  What If Gravity is NOT Quantum?
+                </div>
+                <div class="text-sm text-tc2">
+                  PBS Space Time
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">1m views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 month ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 12───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/kBznA1cKgiY/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/kBznA1cKgiY?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/fQQ_gL8K48zFYTIT4F-agu_Snt4wQbpPfXbfwdOaRgu0DVRwmB_r6V60JXtW-6FfphauTmssWA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  This New Pixel Feature Works Like Magic!
+                </div>
+                <div class="text-sm text-tc2">
+                  Beebom
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">124k views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 13───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/PA9iymey_lM/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/PA9iymey_lM?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/lkH37D712tiyphnu0Id0D5MwwQ7IRuwgQLVD05iMXlDWO-kDHut3uI4MgIEAQ9StK0qOST7fiA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  The Worst Hot Takes in Tech
+                </div>
+                <div class="text-sm text-tc2">
+                  Marques Brownlee
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">1.1M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">15 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 14───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/0XETsoyx-i8/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/0XETsoyx-i8?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/z7ld-8fd6O1_TWOwzngpxqnkNfdyyQfm-Gk0PwOSzep3LFCCtzbUWKsNGPL6Spk4hWqHZUgk=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">ANIMAL MEME REVIEW</div>
+                <div class="text-sm text-tc2">
+                  Tanmay Bhat
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">3.3M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">15 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 15───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/mISvJhV8w-w/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/mISvJhV8w-w?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/enyLBm1Sy8mVRXJJLWHT2z64nqxJGt2g61A9xnxpUjO2YAUovHaY_JT3rnAg0j6Qij9iaHQlAg=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  I bought the CRAZIEST tech in Japan
+                </div>
+                <div class="text-sm text-tc2">
+                  Mrwhosetheboss
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">4.3M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">5 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 16───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/BPrJKQ2HH28/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/BPrJKQ2HH28?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/SMHmQVpzLs0uL7728eQfYp4auW_-Gy5eWjF1knpd11TSu68Y_0C1RFzP8G_HzUL6wXSjwPvZ=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Linus Tech Tips Bought My Computer
+                </div>
+                <div class="text-sm text-tc2">
+                  Asmongold TV
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">5.6M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">6 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 1───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/4oqjcKenCH8/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/4oqjcKenCH8?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZRxxv-lMXnpfUTvYu-h8B4PNRq2rET1mX29v7uMIg=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  CS50x 2023 - Lecture 2 - Arrays
+                </div>
+                <div class="text-sm text-tc2">
+                  CS50 <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">900K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">9 months ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 2───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
             <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
             <img
               src="https://i.ytimg.com/vi/yPcWzSlsteA/hq720.jpg"
@@ -1197,7 +2494,7 @@
               class="max-w-full aspect-video rounded-xl group-hover:hidden"
             />
             <iframe
-              class="w-full aspect-video hidden group-hover:block"
+              class="hidden w-full aspect-video group-hover:block"
               src="https://www.youtube.com/embed/yPcWzSlsteA?si=CFIbM5aZBKHCcU4g&amp;controls=0"
               title="YouTube video player"
               frameborder="0"
@@ -1207,7 +2504,7 @@
             <!-- ─── Details ─────────────── ✣ ─ -->
             <div class="flex py-5">
               <!-- ─── Dp ──────────── ✣ ─ -->
-              <div class="w-14 rounded-full pr-5">
+              <div class="pr-5 rounded-full w-14">
                 <img
                   src="https://yt3.ggpht.com/ytc/AIf8zZTISnAkD2kHuVZMRVTr5QNCww-gagEU9xDdc_w6=s88-c-k-c0x00ffffff-no-rj"
                   alt=""
@@ -1216,16 +2513,618 @@
               </div>
               <!-- ─── Title and channel ─────────────── ✣ ─ -->
               <div class="flex flex-col flex-1 pr-5">
-                <div class="text-tc1 font-semibold">
+                <div class="font-semibold text-tc1">
                   Go vs Rust vs Bun vs Node | Prime Reacts
                 </div>
-                <div class="text-tc2 text-sm">
-                  ThePrimeTime <span class="fa fa-check-circle pl-2"></span>
+                <div class="text-sm text-tc2">
+                  ThePrimeTime <span class="pl-2 fa fa-check-circle"></span>
                 </div>
                 <div class="flex items-center">
-                  <div class="text-tc2 text-sm">145K views</div>
-                  <div class="m-2 w-1 h-1 bg-tc2 rounded-full"></div>
-                  <div class="text-tc2 text-sm">6 months ago</div>
+                  <div class="text-sm text-tc2">145K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">6 months ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 3───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/hGgQ_qxuKO0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/hGgQ_qxuKO0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/1FEdfq3XpKE9UrkT4eOc5wLF2Bz-42sskTi0RkK4nPh4WqCbVmmrDZ5SVEV3WyvPdkfR8sw2=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Why to learn Javascript | Cutting Chai
+                </div>
+                <div class="text-sm text-tc2">
+                  Chai aur Code <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">17K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">2 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 4───────────────── ✣ ─ -->
+
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/2fHnUhA0OTo/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/2fHnUhA0OTo?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZTURjsw1ESUhwQi1pbb634e-gFhCbO9YBB3fHHAnA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  MBA CHAIWALA FILED A CASE ON ME!
+                </div>
+                <div class="text-sm text-tc2">
+                  Thugesh
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">2.1M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">9 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 5───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/SHO_vIS9rfY/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/SHO_vIS9rfY?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZS-vKcN9P4VsCaQUeirOFoDWhPVhCLt0gHBub8Hxw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  When Does Pure Water Get Thick?
+                </div>
+                <div class="text-sm text-tc2">
+                  The Action Lab
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">284K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">4 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 6───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/mSBnJvHtgD0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/mSBnJvHtgD0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZSBXGepGG51kNMKobtKULfhGhJBp7LrJYYTBfkA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  When Does Pure Water Get Thick?
+                </div>
+                <div class="text-sm text-tc2">
+                  The Action Lab
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">284K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">4 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 7───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/WXYmMiwr9JU/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/WXYmMiwr9JU?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/1FEdfq3XpKE9UrkT4eOc5wLF2Bz-42sskTi0RkK4nPh4WqCbVmmrDZ5SVEV3WyvPdkfR8sw2=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  This is future of development
+                </div>
+                <div class="text-sm text-tc2">
+                  Chai aur Code <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">38K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">5 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 8───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/lpLJksTC2J0/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/lpLJksTC2J0?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AIf8zZTt1P1YL3dtduwnGPxN9iDnfAPqk9jIJqGjLPza=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Parliament Breach: Who are the six accused?
+                </div>
+                <div class="text-sm text-tc2">
+                  TNIE Videos
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">3787 views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">51 minutes ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 9───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/yLG8y3BWq7k/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/yLG8y3BWq7k?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/KqDG8ab-rEXzelzh75Xw8KDWoCpY683OhQmLWxn0WGtbUo-3bOvDELvafX4ajq4DOf2HFpL_-A=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  GTA 6 is Finally Here : All You Need To Know!
+                </div>
+                <div class="text-sm text-tc2">
+                  Venom's Tech
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">168K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">10 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 10───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/4c2gviBnyhg/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/4c2gviBnyhg?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/aCpDMXQLiFaLewhEg_Ij3gr-vfMkZvwVCtmTUupgOE3YUbIubr7j0vyjoCm839SCbO9MENxMhw=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Generate Innings: Day 3 | Perth | Aus vs Pak
+                </div>
+                <div class="text-sm text-tc2">
+                  The Grade Cricketer
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">16K views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 11───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/8aR77s9RLck/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/8aR77s9RLck?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/b6JwZU9KF2dIt06sct2fAmw1Ki9pJRDQHQ0lPR9LfSe9KjuV_xN1rsYWrTb_VDyvVKx3WixupUQ=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  What If Gravity is NOT Quantum?
+                </div>
+                <div class="text-sm text-tc2">
+                  PBS Space Time
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">1m views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 month ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 12───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/kBznA1cKgiY/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/kBznA1cKgiY?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/fQQ_gL8K48zFYTIT4F-agu_Snt4wQbpPfXbfwdOaRgu0DVRwmB_r6V60JXtW-6FfphauTmssWA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  This New Pixel Feature Works Like Magic!
+                </div>
+                <div class="text-sm text-tc2">
+                  Beebom
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">124k views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">1 day ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 13───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/PA9iymey_lM/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/PA9iymey_lM?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/lkH37D712tiyphnu0Id0D5MwwQ7IRuwgQLVD05iMXlDWO-kDHut3uI4MgIEAQ9StK0qOST7fiA=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  The Worst Hot Takes in Tech
+                </div>
+                <div class="text-sm text-tc2">
+                  Marques Brownlee
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">1.1M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">15 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 14───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/0XETsoyx-i8/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/0XETsoyx-i8?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/z7ld-8fd6O1_TWOwzngpxqnkNfdyyQfm-Gk0PwOSzep3LFCCtzbUWKsNGPL6Spk4hWqHZUgk=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">ANIMAL MEME REVIEW</div>
+                <div class="text-sm text-tc2">
+                  Tanmay Bhat
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">3.3M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">15 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 15───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/mISvJhV8w-w/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/mISvJhV8w-w?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/enyLBm1Sy8mVRXJJLWHT2z64nqxJGt2g61A9xnxpUjO2YAUovHaY_JT3rnAg0j6Qij9iaHQlAg=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  I bought the CRAZIEST tech in Japan
+                </div>
+                <div class="text-sm text-tc2">
+                  Mrwhosetheboss
+
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">4.3M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">5 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ─── Video 16───────────────── ✣ ─ -->
+          <div class="flex flex-col p-1 group rounded-xl">
+            <!-- ─── Video And Thumbnail ─────────────────────────────────────────── ✣ ─ -->
+            <img
+              src="https://i.ytimg.com/vi/BPrJKQ2HH28/hq720.jpg"
+              alt=""
+              class="max-w-full aspect-video rounded-xl group-hover:hidden"
+            />
+            <iframe
+              class="hidden w-full aspect-video group-hover:block"
+              src="https://www.youtube.com/embed/BPrJKQ2HH28?si=CFIbM5aZBKHCcU4g&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <!-- ─── Details ─────────────── ✣ ─ -->
+            <div class="flex py-5">
+              <!-- ─── Dp ──────────── ✣ ─ -->
+              <div class="pr-5 rounded-full w-14">
+                <img
+                  src="https://yt3.ggpht.com/SMHmQVpzLs0uL7728eQfYp4auW_-Gy5eWjF1knpd11TSu68Y_0C1RFzP8G_HzUL6wXSjwPvZ=s88-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <!-- ─── Title and channel ─────────────── ✣ ─ -->
+              <div class="flex flex-col flex-1 pr-5">
+                <div class="font-semibold text-tc1">
+                  Linus Tech Tips Bought My Computer
+                </div>
+                <div class="text-sm text-tc2">
+                  Asmongold TV
+                  <span class="pl-2 fa fa-check-circle"></span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-sm text-tc2">5.6M views</div>
+                  <div class="w-1 h-1 m-2 rounded-full bg-tc2"></div>
+                  <div class="text-sm text-tc2">6 days ago</div>
                 </div>
               </div>
             </div>
